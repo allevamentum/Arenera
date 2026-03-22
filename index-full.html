@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARENERA — Where Industries Converge</title>
+  <meta name="description" content="Arenera is a premium holding company spanning construction, agriculture, fintech, investments, IT, and AI.">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+</head>
+<body>
+
+  <!-- Shared SVG definitions -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden;" aria-hidden="true">
+    <defs>
+      <linearGradient id="mGold" x1="0" y1="0" x2="0.4" y2="1">
+        <stop offset="0%" stop-color="#DCBD5C"/><stop offset="35%" stop-color="#D4AF37"/>
+        <stop offset="70%" stop-color="#C9A42E"/><stop offset="100%" stop-color="#D4AF37"/>
+      </linearGradient>
+      <linearGradient id="mBlk" x1="0" y1="0" x2="0.3" y2="1">
+        <stop offset="0%" stop-color="#2E2E2E"/><stop offset="40%" stop-color="#1E1E1E"/>
+        <stop offset="70%" stop-color="#262626"/><stop offset="100%" stop-color="#1A1A1A"/>
+      </linearGradient>
+      <linearGradient id="mBlkO" x1="0" y1="0" x2="0.5" y2="1">
+        <stop offset="0%" stop-color="#333"/><stop offset="50%" stop-color="#1A1A1A"/>
+        <stop offset="100%" stop-color="#252525"/>
+      </linearGradient>
+      <linearGradient id="mGoldO" x1="0" y1="0" x2="0.5" y2="1">
+        <stop offset="0%" stop-color="#DCBD5C"/><stop offset="50%" stop-color="#D4AF37"/>
+        <stop offset="100%" stop-color="#C9A42E"/>
+      </linearGradient>
+      <filter id="sh" x="-8%" y="-8%" width="120%" height="120%">
+        <feDropShadow dx="1.5" dy="2" stdDeviation="2.5" flood-color="#000" flood-opacity="0.4"/>
+      </filter>
+      <path id="wmLetters" d="M 5 60 L 25 5 Q 27 0 29 5 L 49 60 M 14 40 L 40 40 M 82 60 L 82 5 M 82 5 L 105 5 Q 119 5 119 18 Q 119 32 105 32 L 82 32 M 102 32 L 119 60 M 147 60 L 147 5 M 147 5 L 180 5 M 147 32 L 175 32 M 147 60 L 180 60 M 208 60 L 208 5 M 208 5 L 248 60 M 248 60 L 248 5 M 276 60 L 276 5 M 276 5 L 309 5 M 276 32 L 304 32 M 276 60 L 309 60 M 337 60 L 337 5 M 337 5 L 360 5 Q 374 5 374 18 Q 374 32 360 32 L 337 32 M 357 32 L 374 60 M 402 60 L 422 5 Q 424 0 426 5 L 446 60 M 411 40 L 437 40"/>
+    </defs>
+  </svg>
+
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ═══ PRELOADER ═══ -->
+  <div id="preloader">
+    <svg class="loader-logo" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+      <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"><path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/></g>
+      <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round"><path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/></g>
+      <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Arenera Home">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+          <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"><path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/></g>
+          <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round"><path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/></g>
+          <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="nav-wordmark" viewBox="-2 -6 454 74" xmlns="http://www.w3.org/2000/svg" aria-label="Arenera">
+          <use href="#wmLetters" fill="none" stroke="url(#mGoldO)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <use href="#wmLetters" fill="none" stroke="url(#mBlk)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#request" class="nav-cta">Submit a Request</a>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+    <div class="hero-gradient" aria-hidden="true"></div>
+    <!-- Floating words added by JS -->
+
+    <div class="hero-content">
+      <div class="hero-logo-container">
+        <svg class="hero-logo" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"><path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/></g>
+          <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round"><path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/></g>
+          <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <h1 class="hero-title" aria-label="ARENERA">
+        <svg class="hero-wordmark" viewBox="-2 -6 454 74" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <use href="#wmLetters" fill="none" stroke="url(#mGoldO)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <use href="#wmLetters" fill="none" stroke="url(#mBlk)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </h1>
+
+      <div class="hero-panel glass-gold">
+        <p class="hero-tagline">Where Industries Converge</p>
+        <a href="#request" class="hero-cta">
+          <span>Submit a Request</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="1" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ SECTORS ═══ -->
+  <section class="section sectors" id="sectors">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">Six Pillars of Growth</h2>
+      </div>
+
+      <div class="sectors-grid">
+        <div class="sector-card glass reveal-scale" data-delay="0">
+          <svg class="sector-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="18" width="16" height="24"/><rect x="26" y="6" width="16" height="36"/>
+            <rect x="10" y="24" width="4" height="4"/><rect x="10" y="32" width="4" height="4"/>
+            <rect x="30" y="12" width="4" height="4"/><rect x="34" y="12" width="4" height="4" opacity="0.5"/>
+            <rect x="30" y="20" width="4" height="4"/><rect x="34" y="20" width="4" height="4" opacity="0.5"/>
+            <rect x="30" y="28" width="4" height="4"/><rect x="34" y="28" width="4" height="4" opacity="0.5"/>
+          </svg>
+          <h3 class="sector-name">Construction</h3>
+          <p class="sector-desc">Infrastructure and development shaping skylines worldwide.</p>
+        </div>
+
+        <div class="sector-card glass reveal-scale" data-delay="100">
+          <svg class="sector-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 24 42 L 24 22"/><path d="M 24 22 C 24 14 16 8 8 12 C 14 12 20 16 24 22"/>
+            <path d="M 24 28 C 24 20 32 14 40 18 C 34 18 28 22 24 28"/><path d="M 24 34 C 24 28 18 24 12 26 C 16 26 20 30 24 34"/><line x1="20" y1="42" x2="28" y2="42"/>
+          </svg>
+          <h3 class="sector-name">Agriculture</h3>
+          <p class="sector-desc">Sustainable farming technologies driving food security.</p>
+        </div>
+
+        <div class="sector-card glass reveal-scale" data-delay="200">
+          <svg class="sector-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="10" width="36" height="28" rx="3"/><line x1="6" y1="18" x2="42" y2="18"/><line x1="6" y1="24" x2="42" y2="24"/>
+            <circle cx="34" cy="31" r="4"/><circle cx="28" cy="31" r="4" opacity="0.5"/>
+          </svg>
+          <h3 class="sector-name">Fintech</h3>
+          <p class="sector-desc">Next-generation financial platforms and payment ecosystems.</p>
+        </div>
+
+        <div class="sector-card glass reveal-scale" data-delay="300">
+          <svg class="sector-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6,36 16,24 24,30 36,14 42,18"/><polyline points="36,14 42,14 42,18"/><line x1="6" y1="42" x2="42" y2="42"/>
+            <rect x="10" y="34" width="6" height="8" opacity="0.4"/><rect x="20" y="30" width="6" height="12" opacity="0.4"/><rect x="30" y="26" width="6" height="16" opacity="0.4"/>
+          </svg>
+          <h3 class="sector-name">Investments</h3>
+          <p class="sector-desc">Strategic equity across high-growth verticals.</p>
+        </div>
+
+        <div class="sector-card glass reveal-scale" data-delay="400">
+          <svg class="sector-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="6" width="40" height="28" rx="2"/><line x1="16" y1="38" x2="32" y2="38"/><line x1="20" y1="34" x2="28" y2="34"/>
+            <polyline points="16,18 12,22 16,26"/><polyline points="32,18 36,22 32,26"/><line x1="22" y1="28" x2="26" y2="16"/>
+          </svg>
+          <h3 class="sector-name">IT</h3>
+          <p class="sector-desc">Enterprise software and cloud infrastructure.</p>
+        </div>
+
+        <div class="sector-card glass reveal-scale" data-delay="500">
+          <svg class="sector-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="20" r="8"/><circle cx="24" cy="20" r="3"/><line x1="24" y1="28" x2="24" y2="36"/>
+            <line x1="16" y1="20" x2="8" y2="20"/><line x1="32" y1="20" x2="40" y2="20"/>
+            <line x1="18.34" y1="14.34" x2="12" y2="8"/><line x1="29.66" y1="14.34" x2="36" y2="8"/>
+            <circle cx="24" cy="38" r="2"/><circle cx="8" cy="20" r="2"/><circle cx="40" cy="20" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="36" cy="8" r="2"/>
+          </svg>
+          <h3 class="sector-name">AI</h3>
+          <p class="sector-desc">Machine learning platforms and intelligent automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule">
+
+  <!-- ═══ MARKETS ═══ -->
+  <section class="section markets" id="markets">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Markets</span>
+        <h2 class="section-title">Real-Time Market Pulse</h2>
+      </div>
+    </div>
+
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-item"><span class="ticker-symbol">ARN.X</span><span class="ticker-value">4,827.63</span><span class="ticker-change up">+2.41%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">AGRI.F</span><span class="ticker-value">1,293.10</span><span class="ticker-change up">+0.87%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">FIN.T</span><span class="ticker-value">872.55</span><span class="ticker-change up">+3.12%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">CON.S</span><span class="ticker-value">2,108.42</span><span class="ticker-change down">-0.34%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">AI.ML</span><span class="ticker-value">6,441.88</span><span class="ticker-change up">+5.67%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">INV.Q</span><span class="ticker-value">3,576.21</span><span class="ticker-change up">+1.09%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">IT.CL</span><span class="ticker-value">951.73</span><span class="ticker-change up">+2.88%</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="dataviz-wrap reveal-scale" data-delay="200">
+        <div class="dataviz-overlay glass">
+          <div class="label">Portfolio Index</div>
+          <div class="value">ARN 4,827.63</div>
+        </div>
+        <canvas id="dataviz-canvas" class="dataviz-canvas"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule">
+
+  <!-- ═══ REQUEST FORM ═══ -->
+  <section class="section request" id="request">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-label" style="justify-content:center;">Contact</span>
+        <h2 class="section-title" style="margin:0 auto 8px;">Submit a Request</h2>
+        <p class="section-subtitle" style="margin:0 auto;">Strategic partnerships and investment inquiries.</p>
+      </div>
+
+      <div class="request-form-wrap glass-gold">
+        <form id="request-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="f-name">Full Name</label>
+              <input class="form-input" type="text" id="f-name" name="name" placeholder="Your name" required>
+              <span class="form-error">Required field</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-email">Email</label>
+              <input class="form-input" type="email" id="f-email" name="email" placeholder="email@company.com" required>
+              <span class="form-error">Required field</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-company">Company</label>
+              <input class="form-input" type="text" id="f-company" name="company" placeholder="Company name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-subject">Subject</label>
+              <select class="form-select" id="f-subject" name="subject" required>
+                <option value="" disabled selected>Select subject</option>
+                <option value="partnership">Partnership</option>
+                <option value="investment">Investment</option>
+                <option value="technology">Technology</option>
+                <option value="general">General Inquiry</option>
+              </select>
+              <span class="form-error">Please select a subject</span>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="f-message">Message</label>
+              <textarea class="form-textarea" id="f-message" name="message" placeholder="Tell us about your inquiry..." rows="4" required></textarea>
+              <span class="form-error">Required field</span>
+            </div>
+          </div>
+          <button type="submit" class="form-submit"><span>Send Request</span></button>
+        </form>
+
+        <div id="form-success" class="form-success">
+          <div class="form-success-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6,14 12,20 22,8"/>
+            </svg>
+          </div>
+          <h3>Request Received</h3>
+          <p>Our team will contact you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">&copy; <span id="year"></span> Arenera Holdings. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M13.6 1H2.4C1.6 1 1 1.6 1 2.4v11.2c0 .8.6 1.4 1.4 1.4h11.2c.8 0 1.4-.6 1.4-1.4V2.4c0-.8-.6-1.4-1.4-1.4zM5.2 13H3V6.3h2.2V13zM4.1 5.4c-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.3 1.3zM13 13h-2.2V9.7c0-.8 0-1.8-1.1-1.8s-1.3.9-1.3 1.8V13H6.2V6.3h2.1v.9c.3-.6 1-1.1 2.1-1.1 2.2 0 2.6 1.5 2.6 3.4V13z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="X">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M12.6 1h2.1l-4.6 5.3L15.5 15h-4.2l-3.3-4.3L4.2 15H2.1l4.9-5.6L1.5 1h4.3l3 3.9L12.6 1zm-.7 12.6h1.2L5.2 2.3H3.9l8 11.3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

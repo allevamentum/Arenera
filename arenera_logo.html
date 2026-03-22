@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Arenera - Перекрестный Контраст</title>
+    <style>
+        body {
+            /* Темный фон для контраста */
+            background-color: #121212; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .canvas {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="canvas">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            
+            <path d="M 50 173 L 50 250 L 127 250" 
+                  fill="none" stroke="#D4AF37" stroke-width="32" 
+                  stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 50 173 L 50 250 L 127 250" 
+                  fill="none" stroke="#2A2A2A" stroke-width="24" 
+                  stroke-linecap="round" stroke-linejoin="round"/>
+
+
+            <g>
+                <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205" />
+                    <path d="M 130 175 L 198 175" />
+                </g>
+                
+                <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205" />
+                    <path d="M 130 175 L 198 175" />
+                </g>
+            </g>
+
+
+            <path d="M 250 127 L 250 50 L 173 50" 
+                  fill="none" stroke="#D4AF37" stroke-width="32" 
+                  stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 250 127 L 250 50 L 173 50" 
+                  fill="none" stroke="#2A2A2A" stroke-width="24" 
+                  stroke-linecap="round" stroke-linejoin="round"/>
+
+        </svg>
+    </div>
+
+</body>
+</html>

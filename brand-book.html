@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARENERA — Brand Book</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --black-light: #111111;
+      --black-card: #141414;
+      --black-elevated: #1A1A1A;
+      --black-border: #222222;
+      --gold: #C9952C;
+      --gold-light: #D4A843;
+      --gold-bright: #E8C86A;
+      --gold-dim: #8B6914;
+      --gold-logo: #D4AF37;
+      --platinum: #E5E4E2;
+      --silver: #B0B0B0;
+      --silver-dark: #7A7A7A;
+      --text-primary: #F0EDE6;
+      --text-secondary: #9A9590;
+      --text-muted: #5A5550;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+      background: #FAFAF8;
+      color: #1A1A1A;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Layout ─── */
+    .page { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+    .bb-cover {
+      min-height: 100vh;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 60px 40px;
+    }
+
+    .bb-cover svg { width: 120px; height: 120px; margin-bottom: 48px; }
+
+    .bb-cover h1 {
+      font-size: 64px;
+      font-weight: 200;
+      letter-spacing: 20px;
+      text-transform: uppercase;
+      color: var(--platinum);
+      margin-bottom: 16px;
+    }
+
+    .bb-cover h1 span { color: var(--gold); }
+
+    .bb-cover .sub {
+      font-size: 14px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--silver-dark);
+      margin-bottom: 60px;
+    }
+
+    .bb-cover .version {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-top: 1px solid var(--black-border);
+      padding-top: 20px;
+    }
+
+    /* ─── Section ─── */
+    .bb-section {
+      padding: 100px 0;
+      border-bottom: 1px solid #E8E6E2;
+    }
+
+    .bb-section:last-child { border-bottom: none; }
+
+    .bb-section-num {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .bb-section h2 {
+      font-size: 36px;
+      font-weight: 200;
+      color: #1A1A1A;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .bb-section .intro {
+      font-size: 16px;
+      color: #666;
+      font-weight: 300;
+      max-width: 600px;
+      margin-bottom: 60px;
+      line-height: 1.7;
+    }
+
+    /* ─── Logo Section ─── */
+    .logo-display {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .logo-box {
+      padding: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      min-height: 280px;
+    }
+
+    .logo-box.dark { background: var(--black); }
+    .logo-box.light { background: #FFFFFF; border: 1px solid #E8E6E2; }
+    .logo-box.gold-bg { background: var(--gold); }
+    .logo-box.platinum-bg { background: var(--platinum); }
+
+    .logo-box svg { width: 140px; height: 140px; }
+
+    .logo-caption {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #999;
+      margin-top: 12px;
+    }
+
+    .logo-rules {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .logo-rule {
+      padding: 24px;
+      background: #F5F5F3;
+      border-radius: 8px;
+    }
+
+    .logo-rule h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1A1A1A;
+    }
+
+    .logo-rule p {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    /* ─── Clear Space ─── */
+    .clearspace-demo {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
+    .clearspace-box {
+      position: relative;
+      padding: 60px;
+      background: var(--black);
+      border-radius: 8px;
+    }
+
+    .clearspace-box svg { width: 100px; height: 100px; }
+
+    .clearspace-border {
+      position: absolute;
+      border: 1px dashed rgba(201, 149, 44, 0.4);
+      inset: 20px;
+      border-radius: 4px;
+    }
+
+    .clearspace-label {
+      position: absolute;
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .clearspace-label.top { top: 8px; left: 50%; transform: translateX(-50%); }
+    .clearspace-label.left { left: 4px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+
+    /* ─── Colors ─── */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .color-card {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #E8E6E2;
+    }
+
+    .color-swatch {
+      height: 120px;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px 16px;
+    }
+
+    .color-info {
+      padding: 16px;
+      background: white;
+    }
+
+    .color-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1A1A1A;
+      margin-bottom: 8px;
+    }
+
+    .color-values {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #999;
+      line-height: 1.8;
+    }
+
+    /* ─── Typography ─── */
+    .type-specimen {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid #E8E6E2;
+    }
+
+    .type-specimen:last-child { border-bottom: none; }
+
+    .type-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .type-sample-200 { font-weight: 200; font-size: 48px; color: #1A1A1A; margin-bottom: 8px; }
+    .type-sample-300 { font-weight: 300; font-size: 48px; color: #1A1A1A; margin-bottom: 8px; }
+    .type-sample-400 { font-weight: 400; font-size: 48px; color: #1A1A1A; margin-bottom: 8px; }
+    .type-sample-500 { font-weight: 500; font-size: 48px; color: #1A1A1A; margin-bottom: 8px; }
+    .type-sample-600 { font-weight: 600; font-size: 48px; color: #1A1A1A; margin-bottom: 8px; }
+
+    .type-meta {
+      font-size: 12px;
+      color: #999;
+      letter-spacing: 1px;
+    }
+
+    .type-scale {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      align-items: baseline;
+      padding: 20px 0;
+      border-bottom: 1px solid #F0F0EE;
+    }
+
+    .type-scale-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .ts-h1 { font-size: 56px; font-weight: 200; letter-spacing: 2px; }
+    .ts-h2 { font-size: 36px; font-weight: 200; letter-spacing: 1px; }
+    .ts-h3 { font-size: 24px; font-weight: 300; }
+    .ts-body { font-size: 16px; font-weight: 300; color: #666; }
+    .ts-caption { font-size: 12px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+    .ts-mono { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #666; }
+
+    /* ─── Icons ─── */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+    }
+
+    .icon-card {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #F5F5F3;
+      border-radius: 8px;
+      padding: 20px;
+      transition: all 0.3s;
+    }
+
+    .icon-card:hover {
+      background: var(--black);
+    }
+
+    .icon-card:hover svg { color: var(--gold); }
+    .icon-card:hover .icon-label { color: var(--silver); }
+
+    .icon-card svg {
+      width: 32px;
+      height: 32px;
+      color: #1A1A1A;
+      transition: color 0.3s;
+    }
+
+    .icon-label {
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #999;
+      text-align: center;
+      transition: color 0.3s;
+    }
+
+    /* ─── Slogans ─── */
+    .slogan-list { list-style: none; }
+
+    .slogan-item {
+      padding: 32px 0;
+      border-bottom: 1px solid #E8E6E2;
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 24px;
+      align-items: baseline;
+    }
+
+    .slogan-type {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .slogan-text {
+      font-size: 24px;
+      font-weight: 200;
+      color: #1A1A1A;
+      letter-spacing: 1px;
+    }
+
+    .slogan-use {
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 1px;
+      text-align: right;
+    }
+
+    /* ─── Tone of Voice ─── */
+    .tov-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .tov-card {
+      padding: 32px;
+      border-radius: 8px;
+      border: 1px solid #E8E6E2;
+    }
+
+    .tov-card.do { border-left: 3px solid var(--gold); }
+    .tov-card.dont { border-left: 3px solid #E06C75; }
+
+    .tov-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .tov-card.do h4 { color: var(--gold); }
+    .tov-card.dont h4 { color: #E06C75; }
+
+    .tov-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ─── Dark Section in brand book ─── */
+    .bb-dark {
+      background: var(--black);
+      color: var(--text-primary);
+      padding: 100px 0;
+      margin: 0 -40px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .bb-dark h2 { color: var(--platinum); }
+    .bb-dark .intro { color: var(--silver-dark); }
+
+    /* ─── Usage Grid ─── */
+    .usage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    .usage-card {
+      background: var(--black-card);
+      border: 1px solid var(--black-border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .usage-preview {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--black-border);
+    }
+
+    .usage-info {
+      padding: 16px;
+    }
+
+    .usage-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--platinum);
+      margin-bottom: 4px;
+    }
+
+    .usage-desc {
+      font-size: 12px;
+      color: var(--silver-dark);
+    }
+
+    .checkmark { color: #28c840; margin-right: 4px; }
+    .crossmark { color: #ff5f57; margin-right: 4px; }
+
+    /* ─── Animation Specs ─── */
+    .anim-spec {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid #E8E6E2;
+      align-items: center;
+    }
+
+    .anim-spec-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: #1A1A1A;
+    }
+
+    .anim-spec-detail {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .anim-bar {
+      height: 4px;
+      background: #E8E6E2;
+      border-radius: 2px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+
+    .anim-bar-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    /* ─── Print ─── */
+    @media print {
+      .bb-cover { page-break-after: always; }
+      .bb-section { page-break-inside: avoid; }
+    }
+
+    @media (max-width: 768px) {
+      .logo-display, .color-grid, .logo-rules, .tov-grid, .usage-grid { grid-template-columns: 1fr; }
+      .icon-grid { grid-template-columns: repeat(3, 1fr); }
+      .slogan-item { grid-template-columns: 1fr; gap: 8px; }
+      .bb-cover h1 { font-size: 36px; letter-spacing: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════ COVER ═══════ -->
+  <div class="bb-cover">
+    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+      <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/>
+      </g>
+      <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/>
+      </g>
+      <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg viewBox="-2 -6 454 74" xmlns="http://www.w3.org/2000/svg" style="width:400px; height:auto; margin-bottom:32px;">
+      <g fill="none" stroke="#D4AF37" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 5 60 L 25 5 Q 27 0 29 5 L 49 60"/><path d="M 14 40 L 40 40"/><path d="M 82 60 L 82 5"/><path d="M 82 5 L 105 5 Q 119 5 119 18 Q 119 32 105 32 L 82 32"/><path d="M 102 32 L 119 60"/><path d="M 147 60 L 147 5"/><path d="M 147 5 L 180 5"/><path d="M 147 32 L 175 32"/><path d="M 147 60 L 180 60"/><path d="M 208 60 L 208 5"/><path d="M 208 5 L 248 60"/><path d="M 248 60 L 248 5"/><path d="M 276 60 L 276 5"/><path d="M 276 5 L 309 5"/><path d="M 276 32 L 304 32"/><path d="M 276 60 L 309 60"/><path d="M 337 60 L 337 5"/><path d="M 337 5 L 360 5 Q 374 5 374 18 Q 374 32 360 32 L 337 32"/><path d="M 357 32 L 374 60"/><path d="M 402 60 L 422 5 Q 424 0 426 5 L 446 60"/><path d="M 411 40 L 437 40"/>
+      </g>
+      <g fill="none" stroke="#2A2A2A" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 5 60 L 25 5 Q 27 0 29 5 L 49 60"/><path d="M 14 40 L 40 40"/><path d="M 82 60 L 82 5"/><path d="M 82 5 L 105 5 Q 119 5 119 18 Q 119 32 105 32 L 82 32"/><path d="M 102 32 L 119 60"/><path d="M 147 60 L 147 5"/><path d="M 147 5 L 180 5"/><path d="M 147 32 L 175 32"/><path d="M 147 60 L 180 60"/><path d="M 208 60 L 208 5"/><path d="M 208 5 L 248 60"/><path d="M 248 60 L 248 5"/><path d="M 276 60 L 276 5"/><path d="M 276 5 L 309 5"/><path d="M 276 32 L 304 32"/><path d="M 276 60 L 309 60"/><path d="M 337 60 L 337 5"/><path d="M 337 5 L 360 5 Q 374 5 374 18 Q 374 32 360 32 L 337 32"/><path d="M 357 32 L 374 60"/><path d="M 402 60 L 422 5 Q 424 0 426 5 L 446 60"/><path d="M 411 40 L 437 40"/>
+      </g>
+    </svg>
+    <p class="sub">Brand Guidelines</p>
+    <p class="version">Version 1.0 &mdash; 2026</p>
+  </div>
+
+  <div class="page">
+
+    <!-- ═══════ 01 — BRAND OVERVIEW ═══════ -->
+    <section class="bb-section">
+      <p class="bb-section-num">01 &mdash; Brand Overview</p>
+      <h2>Brand Essence</h2>
+      <p class="intro">
+        Arenera is a palindrome — read the same forwards and backwards — symbolizing balance, symmetry, and enduring stability. The name evokes "arena," a place where industries meet, compete, and converge into something greater.
+      </p>
+
+      <div class="tov-grid" style="margin-bottom:40px;">
+        <div class="tov-card do">
+          <h4>Mission</h4>
+          <p>To engineer convergence across the world's most critical industries — construction, agriculture, fintech, investments, IT, and AI — creating compounding value through strategic equity and operational excellence.</p>
+        </div>
+        <div class="tov-card do">
+          <h4>Vision</h4>
+          <p>To become the definitive multi-sector holding that proves diversified strength outperforms isolated ambition. Where others see separate industries, Arenera sees interconnected opportunity.</p>
+        </div>
+      </div>
+
+      <div class="logo-rules">
+        <div class="logo-rule">
+          <h4>Authority</h4>
+          <p>We speak with the confidence of deep expertise across multiple domains. Our words carry the weight of proven execution.</p>
+        </div>
+        <div class="logo-rule">
+          <h4>Precision</h4>
+          <p>Every communication is deliberate. We favor clarity over complexity, substance over decoration.</p>
+        </div>
+        <div class="logo-rule">
+          <h4>Forward Motion</h4>
+          <p>Our brand always faces the future. We build, invest, and innovate — never looking backward.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 02 — LOGO ═══════ -->
+    <section class="bb-section">
+      <p class="bb-section-num">02 &mdash; Logo</p>
+      <h2>Logo System</h2>
+      <p class="intro">
+        The Arenera mark consists of the letter "A" framed by two corner brackets. The golden "A" represents ambition and value; the dark brackets symbolize structure, stability, and the holding framework.
+      </p>
+
+      <div class="logo-display">
+        <div>
+          <div class="logo-box dark">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+              <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/>
+              </g>
+              <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/>
+              </g>
+              <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="logo-caption">Primary — Dark Background (Preferred)</p>
+        </div>
+        <div>
+          <div class="logo-box light">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+              <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/>
+              </g>
+              <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/>
+              </g>
+              <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="logo-caption">Secondary — Light Background</p>
+        </div>
+      </div>
+
+      <!-- Clear space -->
+      <h3 style="font-size:18px; font-weight:500; margin-bottom:20px;">Clear Space &amp; Minimum Size</h3>
+      <p style="font-size:14px; color:#666; margin-bottom:24px; max-width:500px;">
+        Maintain a clear space equal to the height of the crossbar of the "A" on all sides. Minimum reproduction size: 32px height for digital, 12mm for print.
+      </p>
+
+      <div class="clearspace-demo">
+        <div class="clearspace-box">
+          <div class="clearspace-border"></div>
+          <span class="clearspace-label top" style="font-size:9px;">1x</span>
+          <span class="clearspace-label left" style="font-size:9px;">1x</span>
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/>
+            </g>
+            <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/>
+            </g>
+            <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Logo Don'ts -->
+      <h3 style="font-size:18px; font-weight:500; margin: 40px 0 20px;">Logo Misuse</h3>
+      <div class="logo-rules">
+        <div class="logo-rule">
+          <h4 style="color:#E06C75;">Do Not Rotate</h4>
+          <p>Never rotate or tilt the logo. It must always appear level and upright.</p>
+        </div>
+        <div class="logo-rule">
+          <h4 style="color:#E06C75;">Do Not Recolor</h4>
+          <p>Do not change the gold/dark color relationship. Use only approved colorways.</p>
+        </div>
+        <div class="logo-rule">
+          <h4 style="color:#E06C75;">Do Not Distort</h4>
+          <p>Maintain the original aspect ratio. Never stretch, compress, or warp the mark.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 03 — COLOR PALETTE ═══════ -->
+    <section class="bb-section">
+      <p class="bb-section-num">03 &mdash; Color Palette</p>
+      <h2>Corporate Colors</h2>
+      <p class="intro">
+        A restrained palette of matte black, gold, platinum, and silver communicates premium authority. Gold is used sparingly as an accent — never as a dominant fill.
+      </p>
+
+      <h3 style="font-size:16px; font-weight:500; margin-bottom:20px;">Primary Palette</h3>
+      <div class="color-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background:#0A0A0A;"></div>
+          <div class="color-info">
+            <div class="color-name">Matte Black</div>
+            <div class="color-values">
+              HEX #0A0A0A<br>
+              RGB 10, 10, 10<br>
+              CMYK 0, 0, 0, 96
+            </div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#D4AF37;"></div>
+          <div class="color-info">
+            <div class="color-name">Arenera Gold</div>
+            <div class="color-values">
+              HEX #D4AF37<br>
+              RGB 212, 175, 55<br>
+              CMYK 0, 17, 74, 17
+            </div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#E5E4E2;"></div>
+          <div class="color-info">
+            <div class="color-name">Platinum</div>
+            <div class="color-values">
+              HEX #E5E4E2<br>
+              RGB 229, 228, 226<br>
+              CMYK 0, 0, 1, 10
+            </div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#B0B0B0;"></div>
+          <div class="color-info">
+            <div class="color-name">Silver</div>
+            <div class="color-values">
+              HEX #B0B0B0<br>
+              RGB 176, 176, 176<br>
+              CMYK 0, 0, 0, 31
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size:16px; font-weight:500; margin: 40px 0 20px;">Extended Palette</h3>
+      <div class="color-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background:#141414;"></div>
+          <div class="color-info">
+            <div class="color-name">Card Black</div>
+            <div class="color-values">HEX #141414<br>UI cards &amp; elevated surfaces</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#C9952C;"></div>
+          <div class="color-info">
+            <div class="color-name">Deep Gold</div>
+            <div class="color-values">HEX #C9952C<br>Accent lines &amp; interactive states</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#E8C86A;"></div>
+          <div class="color-info">
+            <div class="color-name">Bright Gold</div>
+            <div class="color-values">HEX #E8C86A<br>Highlights &amp; hover states</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background:#222222;"></div>
+          <div class="color-info">
+            <div class="color-name">Border Dark</div>
+            <div class="color-values">HEX #222222<br>Dividers &amp; borders</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color usage ratios -->
+      <h3 style="font-size:16px; font-weight:500; margin: 40px 0 20px;">Color Usage Ratios</h3>
+      <div style="display:flex; height:40px; border-radius:8px; overflow:hidden; margin-bottom:12px;">
+        <div style="flex:60; background:#0A0A0A;"></div>
+        <div style="flex:5; background:#D4AF37;"></div>
+        <div style="flex:20; background:#E5E4E2;"></div>
+        <div style="flex:15; background:#B0B0B0;"></div>
+      </div>
+      <div style="display:flex; gap:40px; font-size:12px; color:#999;">
+        <span>Matte Black — 60%</span>
+        <span>Gold — 5%</span>
+        <span>Platinum — 20%</span>
+        <span>Silver — 15%</span>
+      </div>
+    </section>
+
+    <!-- ═══════ 04 — TYPOGRAPHY ═══════ -->
+    <section class="bb-section">
+      <p class="bb-section-num">04 &mdash; Typography</p>
+      <h2>Type System</h2>
+      <p class="intro">
+        The Arenera brand uses a dual type system: a custom SVG-rendered wordmark for the brand name, and Helvetica Neue for all supporting text. The wordmark is hand-drawn to match the logo's stroke technique — ensuring visual unity between mark and name.
+      </p>
+
+      <div class="type-specimen">
+        <p class="type-label">Brand Name — Custom SVG Wordmark</p>
+        <div style="background:#0A0A0A; border-radius:8px; padding:32px; margin-bottom:12px;">
+          <svg viewBox="-2 -6 454 74" xmlns="http://www.w3.org/2000/svg" style="width:320px; height:auto;">
+            <g fill="none" stroke="#D4AF37" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M 5 60 L 25 5 Q 27 0 29 5 L 49 60"/><path d="M 14 40 L 40 40"/><path d="M 82 60 L 82 5"/><path d="M 82 5 L 105 5 Q 119 5 119 18 Q 119 32 105 32 L 82 32"/><path d="M 102 32 L 119 60"/><path d="M 147 60 L 147 5"/><path d="M 147 5 L 180 5"/><path d="M 147 32 L 175 32"/><path d="M 147 60 L 180 60"/><path d="M 208 60 L 208 5"/><path d="M 208 5 L 248 60"/><path d="M 248 60 L 248 5"/><path d="M 276 60 L 276 5"/><path d="M 276 5 L 309 5"/><path d="M 276 32 L 304 32"/><path d="M 276 60 L 309 60"/><path d="M 337 60 L 337 5"/><path d="M 337 5 L 360 5 Q 374 5 374 18 Q 374 32 360 32 L 337 32"/><path d="M 357 32 L 374 60"/><path d="M 402 60 L 422 5 Q 424 0 426 5 L 446 60"/><path d="M 411 40 L 437 40"/>
+            </g>
+            <g fill="none" stroke="#2A2A2A" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M 5 60 L 25 5 Q 27 0 29 5 L 49 60"/><path d="M 14 40 L 40 40"/><path d="M 82 60 L 82 5"/><path d="M 82 5 L 105 5 Q 119 5 119 18 Q 119 32 105 32 L 82 32"/><path d="M 102 32 L 119 60"/><path d="M 147 60 L 147 5"/><path d="M 147 5 L 180 5"/><path d="M 147 32 L 175 32"/><path d="M 147 60 L 180 60"/><path d="M 208 60 L 208 5"/><path d="M 208 5 L 248 60"/><path d="M 248 60 L 248 5"/><path d="M 276 60 L 276 5"/><path d="M 276 5 L 309 5"/><path d="M 276 32 L 304 32"/><path d="M 276 60 L 309 60"/><path d="M 337 60 L 337 5"/><path d="M 337 5 L 360 5 Q 374 5 374 18 Q 374 32 360 32 L 337 32"/><path d="M 357 32 L 374 60"/><path d="M 402 60 L 422 5 Q 424 0 426 5 L 446 60"/><path d="M 411 40 L 437 40"/>
+            </g>
+          </svg>
+        </div>
+        <p class="type-meta">Custom SVG — stroke-based lettering matching logo A. Matte black fill with matte gold outline. Rendered as vector at all sizes.</p>
+      </div>
+      <div class="type-specimen">
+        <p class="type-label">Wordmark Construction</p>
+        <p style="font-size:14px; color:#666; line-height:1.7; margin-bottom:12px;">Each letter is constructed from SVG stroke paths with <code style="font-family:'JetBrains Mono',monospace; font-size:12px; background:#F5F5F3; padding:2px 6px; border-radius:3px;">stroke-linecap="round"</code> and <code style="font-family:'JetBrains Mono',monospace; font-size:12px; background:#F5F5F3; padding:2px 6px; border-radius:3px;">stroke-linejoin="round"</code>, producing soft rounded terminals identical to the logo mark. Outer stroke: 16px (#D4AF37 gold). Inner stroke: 11px (#2A2A2A dark).</p>
+      </div>
+      <div class="type-specimen">
+        <p class="type-label">Supporting Type — Helvetica Neue</p>
+        <p class="type-sample-300" style="font-size:36px;">Aa — Light (300)</p>
+        <p class="type-meta">Body text, descriptions, subtitles, UI labels</p>
+      </div>
+      <div class="type-specimen">
+        <p class="type-sample-400" style="font-size:28px;">Aa — Regular (400)</p>
+        <p class="type-meta">Taglines, section subtitles, interactive elements</p>
+      </div>
+      <div class="type-specimen">
+        <p style="font-family:'JetBrains Mono',monospace; font-size:20px; margin-bottom:8px;">Aa — JetBrains Mono</p>
+        <p class="type-meta">Monospace — Data visualizations, code displays, ticker tape, technical content</p>
+      </div>
+
+      <h3 style="font-size:16px; font-weight:500; margin: 40px 0 20px;">Type Scale</h3>
+      <div class="type-scale"><span class="type-scale-label">H1</span><span class="ts-h1">Shape the Future</span></div>
+      <div class="type-scale"><span class="type-scale-label">H2</span><span class="ts-h2">Six Pillars of Growth</span></div>
+      <div class="type-scale"><span class="type-scale-label">H3</span><span class="ts-h3">Real-Time Analytics</span></div>
+      <div class="type-scale"><span class="type-scale-label">Body</span><span class="ts-body">Strategic equity positions and venture capital across high-growth verticals.</span></div>
+      <div class="type-scale"><span class="type-scale-label">Caption</span><span class="ts-caption">Technology</span></div>
+      <div class="type-scale"><span class="type-scale-label">Mono</span><span class="ts-mono">ARN 4,827.63 &nbsp; +2.41%</span></div>
+    </section>
+
+    <!-- ═══════ 05 — ICONOGRAPHY ═══════ -->
+    <section class="bb-section">
+      <p class="bb-section-num">05 &mdash; Iconography</p>
+      <h2>Custom Icon Set</h2>
+      <p class="intro">
+        Line-style icons at 2.5px stroke weight, bold and confident to match the brand's premium presence. Used for sector identification and UI elements. Hover to preview on-dark treatment.
+      </p>
+
+      <div class="icon-grid">
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="18" width="16" height="24"/><rect x="26" y="6" width="16" height="36"/>
+            <rect x="10" y="24" width="4" height="4"/><rect x="10" y="32" width="4" height="4"/>
+            <rect x="30" y="12" width="4" height="4"/><rect x="34" y="12" width="4" height="4" opacity="0.5"/>
+            <rect x="30" y="20" width="4" height="4"/><rect x="34" y="20" width="4" height="4" opacity="0.5"/>
+            <rect x="30" y="28" width="4" height="4"/><rect x="34" y="28" width="4" height="4" opacity="0.5"/>
+          </svg>
+          <span class="icon-label">Construction</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 24 42 L 24 22"/><path d="M 24 22 C 24 14 16 8 8 12 C 14 12 20 16 24 22"/>
+            <path d="M 24 28 C 24 20 32 14 40 18 C 34 18 28 22 24 28"/><path d="M 24 34 C 24 28 18 24 12 26 C 16 26 20 30 24 34"/><line x1="20" y1="42" x2="28" y2="42"/>
+          </svg>
+          <span class="icon-label">Agriculture</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="10" width="36" height="28" rx="3"/><line x1="6" y1="18" x2="42" y2="18"/><line x1="6" y1="24" x2="42" y2="24"/>
+            <circle cx="34" cy="31" r="4"/><circle cx="28" cy="31" r="4" opacity="0.5"/>
+          </svg>
+          <span class="icon-label">Fintech</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6,36 16,24 24,30 36,14 42,18"/><polyline points="36,14 42,14 42,18"/><line x1="6" y1="42" x2="42" y2="42"/>
+            <rect x="10" y="34" width="6" height="8" opacity="0.4"/><rect x="20" y="30" width="6" height="12" opacity="0.4"/><rect x="30" y="26" width="6" height="16" opacity="0.4"/>
+          </svg>
+          <span class="icon-label">Investments</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="6" width="40" height="28" rx="2"/><line x1="16" y1="38" x2="32" y2="38"/><line x1="20" y1="34" x2="28" y2="34"/>
+            <polyline points="16,18 12,22 16,26"/><polyline points="32,18 36,22 32,26"/><line x1="22" y1="28" x2="26" y2="16"/>
+          </svg>
+          <span class="icon-label">IT</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="20" r="8"/><circle cx="24" cy="20" r="3"/><line x1="24" y1="28" x2="24" y2="36"/>
+            <line x1="16" y1="20" x2="8" y2="20"/><line x1="32" y1="20" x2="40" y2="20"/>
+            <line x1="18.34" y1="14.34" x2="12" y2="8"/><line x1="29.66" y1="14.34" x2="36" y2="8"/>
+            <circle cx="24" cy="38" r="2"/><circle cx="8" cy="20" r="2"/><circle cx="40" cy="20" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="36" cy="8" r="2"/>
+          </svg>
+          <span class="icon-label">AI</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 2 L28 8 V16 C28 24 16 30 16 30 C16 30 4 24 4 16 V8 Z" transform="translate(8,8)"/>
+            <polyline points="18,24 22,28 30,20"/>
+          </svg>
+          <span class="icon-label">Security</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="16"/><polyline points="24,12 24,24 32,24"/>
+          </svg>
+          <span class="icon-label">Real-Time</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="10" r="4"/><circle cx="10" cy="38" r="4"/><circle cx="38" cy="38" r="4"/>
+            <line x1="24" y1="14" x2="10" y2="34"/><line x1="24" y1="14" x2="38" y2="34"/><line x1="14" y1="38" x2="34" y2="38"/>
+          </svg>
+          <span class="icon-label">Network</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="20" width="32" height="20" rx="2"/><path d="M16 20V14a8 8 0 0 1 16 0v6"/>
+            <circle cx="24" cy="31" r="3"/><line x1="24" y1="34" x2="24" y2="36"/>
+          </svg>
+          <span class="icon-label">Encryption</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 8h32v32H8z"/><path d="M16 8V4M24 8V4M32 8V4M16 40v4M24 40v4M32 40v4"/>
+            <path d="M8 16H4M8 24H4M8 32H4M40 16h4M40 24h4M40 32h4"/>
+          </svg>
+          <span class="icon-label">Chip / ML</span>
+        </div>
+        <div class="icon-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="16"/><path d="M24 8a16 16 0 0 1 0 32" stroke-dasharray="4 4"/>
+            <path d="M16 24h16M24 16v16"/>
+          </svg>
+          <span class="icon-label">Global</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 06 — SLOGANS ═══════ -->
+    <section class="bb-section">
+      <p class="bb-section-num">06 &mdash; Slogans &amp; Messaging</p>
+      <h2>Brand Messaging</h2>
+      <p class="intro">
+        Core slogans distilled for use across the website, presentations, and investor materials. Each is crafted to convey authority, scale, and forward momentum.
+      </p>
+
+      <ul class="slogan-list">
+        <li class="slogan-item">
+          <span class="slogan-type">Primary</span>
+          <span class="slogan-text">Where Industries Converge</span>
+          <span class="slogan-use">Hero, footer, business cards</span>
+        </li>
+        <li class="slogan-item">
+          <span class="slogan-type">CTA</span>
+          <span class="slogan-text">Shape the Future. Together.</span>
+          <span class="slogan-use">Contact section, investor deck</span>
+        </li>
+        <li class="slogan-item">
+          <span class="slogan-type">Portfolio</span>
+          <span class="slogan-text">Six Pillars of Growth</span>
+          <span class="slogan-use">Sectors section header</span>
+        </li>
+        <li class="slogan-item">
+          <span class="slogan-type">Tech</span>
+          <span class="slogan-text">Built by Engineers, Driven by Intelligence</span>
+          <span class="slogan-use">Technology section, hiring</span>
+        </li>
+        <li class="slogan-item">
+          <span class="slogan-type">Security</span>
+          <span class="slogan-text">Fortified Infrastructure</span>
+          <span class="slogan-use">Security section, compliance</span>
+        </li>
+        <li class="slogan-item">
+          <span class="slogan-type">Markets</span>
+          <span class="slogan-text">Real-Time Market Pulse</span>
+          <span class="slogan-use">Data visualization section</span>
+        </li>
+        <li class="slogan-item">
+          <span class="slogan-type">Brand</span>
+          <span class="slogan-text">Diversified Strength, Unified Vision</span>
+          <span class="slogan-use">Investor materials, press</span>
+        </li>
+        <li class="slogan-item">
+          <span class="slogan-type">Brand</span>
+          <span class="slogan-text">The Arena of Tomorrow</span>
+          <span class="slogan-use">Brand campaigns, social</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ═══════ 07 — TONE OF VOICE ═══════ -->
+    <section class="bb-section">
+      <p class="bb-section-num">07 &mdash; Tone of Voice</p>
+      <h2>Communication Guidelines</h2>
+      <p class="intro">
+        Arenera communicates with measured confidence. Our voice is institutional yet accessible — the voice of a boardroom, not a billboard.
+      </p>
+
+      <div class="tov-grid">
+        <div class="tov-card do">
+          <h4>We Are</h4>
+          <p>Authoritative. Precise. Forward-looking. Confident without arrogance. We state facts and let results speak. Every word is intentional.</p>
+        </div>
+        <div class="tov-card dont">
+          <h4>We Are Not</h4>
+          <p>Casual. Hyperbolic. Trendy. We never use startup jargon, excessive exclamation marks, or buzzwords. We never oversell or make unsubstantiated claims.</p>
+        </div>
+        <div class="tov-card do">
+          <h4>Write This</h4>
+          <p>"Strategic equity positions across six high-growth verticals." — Specific, measured, factual.</p>
+        </div>
+        <div class="tov-card dont">
+          <h4>Not This</h4>
+          <p>"We're disrupting everything with our amazing portfolio of game-changing investments!" — Vague, hyperbolic, unsubstantiated.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 08 — ANIMATION ═══════ -->
+    <section class="bb-section">
+      <p class="bb-section-num">08 &mdash; Motion &amp; Animation</p>
+      <h2>Animation Specifications</h2>
+      <p class="intro">
+        Motion is used to reinforce the premium feel. All animations are subtle, purposeful, and use the brand's signature easing curves.
+      </p>
+
+      <div class="anim-spec">
+        <span class="anim-spec-name">Primary Easing</span>
+        <div>
+          <span class="anim-spec-detail">cubic-bezier(0.16, 1, 0.3, 1) — Expo Out</span>
+          <div class="anim-bar"><div class="anim-bar-fill" style="width:85%;"></div></div>
+        </div>
+      </div>
+      <div class="anim-spec">
+        <span class="anim-spec-name">Scroll Reveal</span>
+        <div>
+          <span class="anim-spec-detail">800ms duration, 40px translateY, 0.15 threshold</span>
+          <div class="anim-bar"><div class="anim-bar-fill" style="width:65%;"></div></div>
+        </div>
+      </div>
+      <div class="anim-spec">
+        <span class="anim-spec-name">Hover Transitions</span>
+        <div>
+          <span class="anim-spec-detail">300ms duration, ease-out</span>
+          <div class="anim-bar"><div class="anim-bar-fill" style="width:35%;"></div></div>
+        </div>
+      </div>
+      <div class="anim-spec">
+        <span class="anim-spec-name">Preloader</span>
+        <div>
+          <span class="anim-spec-detail">Logo pulse 1.5s, bar fill progressive, fade out 800ms</span>
+          <div class="anim-bar"><div class="anim-bar-fill" style="width:75%;"></div></div>
+        </div>
+      </div>
+      <div class="anim-spec">
+        <span class="anim-spec-name">Particle Network</span>
+        <div>
+          <span class="anim-spec-detail">80 particles, 0.3 velocity, 120px connection radius, gold tint</span>
+          <div class="anim-bar"><div class="anim-bar-fill" style="width:50%;"></div></div>
+        </div>
+      </div>
+      <div class="anim-spec">
+        <span class="anim-spec-name">Data Visualization</span>
+        <div>
+          <span class="anim-spec-detail">Canvas-drawn, bezier curves, live-update after initial reveal</span>
+          <div class="anim-bar"><div class="anim-bar-fill" style="width:90%;"></div></div>
+        </div>
+      </div>
+      <div class="anim-spec">
+        <span class="anim-spec-name">Code Typing</span>
+        <div>
+          <span class="anim-spec-detail">120ms per line, translateX(-10px) reveal, sequential cascade</span>
+          <div class="anim-bar"><div class="anim-bar-fill" style="width:45%;"></div></div>
+        </div>
+      </div>
+      <div class="anim-spec">
+        <span class="anim-spec-name">Ticker Tape</span>
+        <div>
+          <span class="anim-spec-detail">30s infinite linear scroll, duplicated content for seamless loop</span>
+          <div class="anim-bar"><div class="anim-bar-fill" style="width:60%;"></div></div>
+        </div>
+      </div>
+
+      <h3 style="font-size:16px; font-weight:500; margin: 40px 0 20px;">Animation Principles</h3>
+      <div class="logo-rules">
+        <div class="logo-rule">
+          <h4>Purposeful</h4>
+          <p>Every animation serves a function — guiding attention, conveying data, or establishing hierarchy. Decorative motion is prohibited.</p>
+        </div>
+        <div class="logo-rule">
+          <h4>Restrained</h4>
+          <p>Subtle over dramatic. Short durations. No bouncing, no elastic effects. The brand whispers luxury — it never shouts.</p>
+        </div>
+        <div class="logo-rule">
+          <h4>Performant</h4>
+          <p>GPU-accelerated transforms only. No layout-triggering animations. 60fps minimum. requestAnimationFrame over setInterval.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 09 — DIGITAL APPLICATIONS ═══════ -->
+    <section class="bb-section">
+      <p class="bb-section-num">09 &mdash; Digital Applications</p>
+      <h2>UI Specifications</h2>
+      <p class="intro">
+        Key specifications for implementing the brand consistently across digital touchpoints.
+      </p>
+
+      <div class="logo-rules" style="margin-bottom:40px;">
+        <div class="logo-rule">
+          <h4>Navigation</h4>
+          <p>Fixed top, transparent → frosted glass on scroll. 13px Helvetica Neue Medium, 2px letter-spacing, uppercase. Gold underline on hover.</p>
+        </div>
+        <div class="logo-rule">
+          <h4>Buttons</h4>
+          <p>1px gold border, gold text, transparent fill. On hover: gold fill slides up, text inverts to black. 13px, 4px letter-spacing.</p>
+        </div>
+        <div class="logo-rule">
+          <h4>Cards</h4>
+          <p>#141414 background, #222222 border. Gold top-line accent on hover, scaleX(0) → scaleX(1). Padding: 50px.</p>
+        </div>
+      </div>
+      <div class="logo-rules">
+        <div class="logo-rule">
+          <h4>Section Labels</h4>
+          <p>11px Helvetica Neue Medium, 4px letter-spacing, uppercase, gold color. Preceded by a 40px gold horizontal rule.</p>
+        </div>
+        <div class="logo-rule">
+          <h4>Noise Texture</h4>
+          <p>SVG fractal noise overlay at 3% opacity, fixed position, applied globally. Adds analog warmth to the digital surface.</p>
+        </div>
+        <div class="logo-rule">
+          <h4>Custom Cursor</h4>
+          <p>8px gold dot (instant) + 40px gold ring (lerp 0.12). Ring expands to 60px on interactive elements. mix-blend-mode: difference.</p>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /.page -->
+
+  <!-- ═══════ BACK COVER ═══════ -->
+  <div class="bb-cover" style="min-height:50vh;">
+    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="width:80px; height:80px; margin-bottom:32px;">
+      <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+      <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/>
+      </g>
+      <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/><path d="M 130 175 L 198 175"/>
+      </g>
+      <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <p style="font-size:12px; letter-spacing:4px; text-transform:uppercase; color:#7A7A7A;">
+      &copy; 2026 Arenera Holdings. All rights reserved.
+    </p>
+    <p style="font-size:11px; letter-spacing:2px; color:#5A5550; margin-top:12px;">
+      This document is confidential property of Arenera.
+    </p>
+  </div>
+
+</body>
+</html>

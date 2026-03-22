@@ -1,0 +1,34 @@
+<svg viewBox="-2 -6 396 74" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wmGold" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#DCBD5C"/><stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#C9A42E"/>
+    </linearGradient>
+    <linearGradient id="wmBlk" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#2E2E2E"/><stop offset="40%" stop-color="#1E1E1E"/>
+      <stop offset="70%" stop-color="#262626"/><stop offset="100%" stop-color="#1A1A1A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Gold outline (wider, behind) -->
+  <g fill="none" stroke="url(#wmGold)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 5 60 L 25 5 Q 27 0 29 5 L 49 60"/><path d="M 14 40 L 40 40"/>
+    <path d="M 67 60 L 67 5"/><path d="M 67 5 L 90 5 Q 104 5 104 18 Q 104 32 90 32 L 67 32"/><path d="M 87 32 L 104 60"/>
+    <path d="M 123 60 L 123 5"/><path d="M 123 5 L 156 5"/><path d="M 123 32 L 151 32"/><path d="M 123 60 L 156 60"/>
+    <path d="M 175 60 L 175 5"/><path d="M 175 5 L 215 60"/><path d="M 215 60 L 215 5"/>
+    <path d="M 235 60 L 235 5"/><path d="M 235 5 L 268 5"/><path d="M 235 32 L 263 32"/><path d="M 235 60 L 268 60"/>
+    <path d="M 287 60 L 287 5"/><path d="M 287 5 L 310 5 Q 324 5 324 18 Q 324 32 310 32 L 287 32"/><path d="M 307 32 L 324 60"/>
+    <path d="M 343 60 L 363 5 Q 365 0 367 5 L 387 60"/><path d="M 352 40 L 378 40"/>
+  </g>
+
+  <!-- Matte black fill (narrower, on top) -->
+  <g fill="none" stroke="url(#wmBlk)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 5 60 L 25 5 Q 27 0 29 5 L 49 60"/><path d="M 14 40 L 40 40"/>
+    <path d="M 67 60 L 67 5"/><path d="M 67 5 L 90 5 Q 104 5 104 18 Q 104 32 90 32 L 67 32"/><path d="M 87 32 L 104 60"/>
+    <path d="M 123 60 L 123 5"/><path d="M 123 5 L 156 5"/><path d="M 123 32 L 151 32"/><path d="M 123 60 L 156 60"/>
+    <path d="M 175 60 L 175 5"/><path d="M 175 5 L 215 60"/><path d="M 215 60 L 215 5"/>
+    <path d="M 235 60 L 235 5"/><path d="M 235 5 L 268 5"/><path d="M 235 32 L 263 32"/><path d="M 235 60 L 268 60"/>
+    <path d="M 287 60 L 287 5"/><path d="M 287 5 L 310 5 Q 324 5 324 18 Q 324 32 310 32 L 287 32"/><path d="M 307 32 L 324 60"/>
+    <path d="M 343 60 L 363 5 Q 365 0 367 5 L 387 60"/><path d="M 352 40 L 378 40"/>
+  </g>
+</svg>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARENERA — Where Industries Converge</title>
+  <meta name="description" content="Arenera — a premium holding company spanning construction, agriculture, fintech, investments, IT, and AI.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --black: #050505; --gold: #D4AF37; --platinum: #E5E4E2; --silver: #7A7A7A; }
+
+    html, body {
+      height: 100%; overflow: hidden;
+      font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+      background: var(--black); color: var(--platinum);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Header ─── */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px clamp(24px, 5vw, 60px);
+    }
+    .header-wordmark { height: 18px; width: auto; opacity: 0.8; }
+
+    /* Brand button — iOS 26 + Arenera identity */
+    .btn-brand {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 32px;
+      font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212, 175, 55, 0.06);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 100px;
+      cursor: pointer; text-decoration: none;
+      font-family: inherit;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative; overflow: hidden;
+    }
+    .btn-brand::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.03));
+      border-radius: 100px; opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .btn-brand:hover {
+      border-color: rgba(212, 175, 55, 0.45);
+      box-shadow: 0 0 28px rgba(212, 175, 55, 0.12), inset 0 0 20px rgba(212, 175, 55, 0.04);
+      transform: scale(1.03);
+    }
+    .btn-brand:hover::before { opacity: 1; }
+    .btn-brand:active { transform: scale(0.97); }
+    .btn-brand span, .btn-brand svg { position: relative; z-index: 1; }
+    .btn-brand svg { transition: transform 0.3s; }
+    .btn-brand:hover svg { transform: translateX(3px); }
+
+    /* ─── Canvas ─── */
+    #bg-canvas { position: fixed; inset: 0; z-index: 0; }
+
+    /* ─── Logo ─── */
+    .logo-center {
+      position: fixed; inset: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
+    }
+    .logo-svg {
+      width: clamp(420px, 75vw, 860px);
+      height: clamp(420px, 75vw, 860px);
+      opacity: 0;
+    }
+
+    /* Stroke draw-in animation */
+    .logo-svg path, .logo-svg g path {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+    }
+
+    .logo-svg.animate {
+      opacity: 1;
+    }
+
+    .logo-svg.animate path,
+    .logo-svg.animate g path {
+      animation: draw-stroke 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Stagger the draw-in for different parts */
+    .logo-svg.animate .bracket-bl path { animation-delay: 0s; }
+    .logo-svg.animate .letter-a path { animation-delay: 0.3s; }
+    .logo-svg.animate .bracket-tr path { animation-delay: 0.6s; }
+
+    @keyframes draw-stroke {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* Gold shimmer after draw-in */
+    .logo-svg.animate {
+      animation: logo-appear 0.5s ease-out forwards,
+                 logo-shimmer 4s 2.5s ease-in-out infinite,
+                 logo-breathe 6s 3s ease-in-out infinite;
+    }
+
+    @keyframes logo-appear {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes logo-shimmer {
+      0%, 100% { filter: drop-shadow(0 0 40px rgba(212,175,55,0.05)) brightness(1); }
+      50% { filter: drop-shadow(0 0 80px rgba(212,175,55,0.12)) brightness(1.05); }
+    }
+
+    @keyframes logo-breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.008); }
+    }
+
+    /* ─── Noise ─── */
+    .noise {
+      position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat; background-size: 256px;
+    }
+
+    /* ─── Tagline ─── */
+    .tagline {
+      position: fixed; bottom: 32px; left: 0; right: 0; z-index: 10;
+      text-align: center;
+      font-size: 12px; font-weight: 400; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--silver); opacity: 0;
+      animation: fade-up 1s 3s ease-out forwards;
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 0.5; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <svg class="header-wordmark" viewBox="-2 -6 454 74" xmlns="http://www.w3.org/2000/svg" aria-label="Arenera">
+      <g fill="none" stroke="#D4AF37" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 5 60 L 25 5 Q 27 0 29 5 L 49 60"/><path d="M 14 40 L 40 40"/><path d="M 82 60 L 82 5"/><path d="M 82 5 L 105 5 Q 119 5 119 18 Q 119 32 105 32 L 82 32"/><path d="M 102 32 L 119 60"/><path d="M 147 60 L 147 5"/><path d="M 147 5 L 180 5"/><path d="M 147 32 L 175 32"/><path d="M 147 60 L 180 60"/><path d="M 208 60 L 208 5"/><path d="M 208 5 L 248 60"/><path d="M 248 60 L 248 5"/><path d="M 276 60 L 276 5"/><path d="M 276 5 L 309 5"/><path d="M 276 32 L 304 32"/><path d="M 276 60 L 309 60"/><path d="M 337 60 L 337 5"/><path d="M 337 5 L 360 5 Q 374 5 374 18 Q 374 32 360 32 L 337 32"/><path d="M 357 32 L 374 60"/><path d="M 402 60 L 422 5 Q 424 0 426 5 L 446 60"/><path d="M 411 40 L 437 40"/>
+      </g>
+      <g fill="none" stroke="#2A2A2A" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 5 60 L 25 5 Q 27 0 29 5 L 49 60"/><path d="M 14 40 L 40 40"/><path d="M 82 60 L 82 5"/><path d="M 82 5 L 105 5 Q 119 5 119 18 Q 119 32 105 32 L 82 32"/><path d="M 102 32 L 119 60"/><path d="M 147 60 L 147 5"/><path d="M 147 5 L 180 5"/><path d="M 147 32 L 175 32"/><path d="M 147 60 L 180 60"/><path d="M 208 60 L 208 5"/><path d="M 208 5 L 248 60"/><path d="M 248 60 L 248 5"/><path d="M 276 60 L 276 5"/><path d="M 276 5 L 309 5"/><path d="M 276 32 L 304 32"/><path d="M 276 60 L 309 60"/><path d="M 337 60 L 337 5"/><path d="M 337 5 L 360 5 Q 374 5 374 18 Q 374 32 360 32 L 337 32"/><path d="M 357 32 L 374 60"/><path d="M 402 60 L 422 5 Q 424 0 426 5 L 446 60"/><path d="M 411 40 L 437 40"/>
+      </g>
+    </svg>
+    <a href="mailto:contact@arenera.com" class="btn-brand">
+      <span>Submit a Request</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="1" y1="7" x2="12" y2="7"/><polyline points="8,3 12,7 8,11"/>
+      </svg>
+    </a>
+  </header>
+
+  <!-- Background -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Centered logo -->
+  <div class="logo-center">
+    <svg class="logo-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- Bottom-left bracket -->
+      <g class="bracket-bl">
+        <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <!-- Letter A (scaled 80%) -->
+      <g class="letter-a" transform="translate(164, 152) scale(0.8) translate(-164, -152)">
+        <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/>
+          <path d="M 130 175 L 198 175"/>
+        </g>
+        <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/>
+          <path d="M 130 175 L 198 175"/>
+        </g>
+      </g>
+      <!-- Top-right bracket -->
+      <g class="bracket-tr">
+        <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#D4AF37" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#2A2A2A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </svg>
+  </div>
+
+  <p class="tagline">Where Industries Converge</p>
+
+  <script>
+  (function() {
+    'use strict';
+
+    // Trigger logo draw-in animation
+    setTimeout(() => document.querySelector('.logo-svg').classList.add('animate'), 400);
+
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, cx, cy, time = 0;
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+      cx = W / 2; cy = H / 2;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // ─── Full-screen orbital system ───
+    const orbits = [
+      { rx: 0.42, ry: 0.16, tilt: -25, speed: 0.0004,  dots: 4, opacity: 0.055 },
+      { rx: 0.55, ry: 0.22, tilt: 18,  speed: -0.00028, dots: 3, opacity: 0.045 },
+      { rx: 0.68, ry: 0.28, tilt: -42, speed: 0.00022, dots: 5, opacity: 0.035 },
+      { rx: 0.35, ry: 0.12, tilt: 52,  speed: 0.00038, dots: 3, opacity: 0.05 },
+      { rx: 0.80, ry: 0.34, tilt: -8,  speed: -0.00018, dots: 4, opacity: 0.03 },
+      { rx: 0.30, ry: 0.09, tilt: 38,  speed: 0.00048, dots: 2, opacity: 0.055 },
+      { rx: 0.92, ry: 0.40, tilt: -55, speed: 0.00014, dots: 5, opacity: 0.022 },
+      { rx: 0.50, ry: 0.20, tilt: 70,  speed: -0.00032, dots: 3, opacity: 0.04 },
+      { rx: 0.75, ry: 0.30, tilt: 25,  speed: 0.0002,  dots: 4, opacity: 0.028 },
+    ];
+
+    orbits.forEach(o => {
+      o.satellites = [];
+      for (let i = 0; i < o.dots; i++) {
+        o.satellites.push({
+          angle: (Math.PI * 2 / o.dots) * i + Math.random() * 0.8,
+          size: 1 + Math.random() * 1.8,
+          brightness: 0.35 + Math.random() * 0.65,
+        });
+      }
+    });
+
+    // ─── Dense star field ───
+    const stars = [];
+    for (let i = 0; i < 200; i++) {
+      stars.push({
+        x: Math.random(), y: Math.random(),
+        size: Math.random() * 0.9 + 0.15,
+        twinkleSpeed: 0.0008 + Math.random() * 0.004,
+        twinkleOffset: Math.random() * Math.PI * 2,
+        baseOpacity: 0.08 + Math.random() * 0.2,
+      });
+    }
+
+    function getAllSatPositions() {
+      const positions = [];
+      const dim = Math.max(W, H);
+      orbits.forEach(o => {
+        const tiltRad = o.tilt * Math.PI / 180;
+        const cosT = Math.cos(tiltRad), sinT = Math.sin(tiltRad);
+        const aRx = o.rx * dim * 0.55;
+        const aRy = o.ry * dim * 0.55;
+        o.satellites.forEach(s => {
+          const a = s.angle + time * o.speed;
+          const px = Math.cos(a) * aRx, py = Math.sin(a) * aRy;
+          positions.push({ x: cx + px * cosT - py * sinT, y: cy + px * sinT + py * cosT, brightness: s.brightness });
+        });
+      });
+      return positions;
+    }
+
+    function draw() {
+      time++;
+      ctx.fillStyle = 'rgba(5, 5, 5, 0.12)';
+      ctx.fillRect(0, 0, W, H);
+
+      // Stars
+      stars.forEach(s => {
+        const twinkle = Math.sin(time * s.twinkleSpeed + s.twinkleOffset) * 0.5 + 0.5;
+        ctx.beginPath();
+        ctx.arc(s.x * W, s.y * H, s.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200, 200, 215, ${s.baseOpacity * (0.4 + twinkle * 0.6)})`;
+        ctx.fill();
+      });
+
+      const dim = Math.max(W, H);
+
+      // Orbits + satellites
+      orbits.forEach(o => {
+        const tiltRad = o.tilt * Math.PI / 180;
+        const cosT = Math.cos(tiltRad), sinT = Math.sin(tiltRad);
+        const aRx = o.rx * dim * 0.55;
+        const aRy = o.ry * dim * 0.55;
+
+        // Orbit ring
+        ctx.beginPath();
+        for (let i = 0; i <= 120; i++) {
+          const a = (i / 120) * Math.PI * 2;
+          const px = Math.cos(a) * aRx, py = Math.sin(a) * aRy;
+          const x = cx + px * cosT - py * sinT, y = cy + px * sinT + py * cosT;
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.strokeStyle = `rgba(212, 175, 55, ${o.opacity})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+
+        // Satellites
+        o.satellites.forEach(s => {
+          const a = s.angle + time * o.speed;
+          const px = Math.cos(a) * aRx, py = Math.sin(a) * aRy;
+          const sx = cx + px * cosT - py * sinT;
+          const sy = cy + px * sinT + py * cosT;
+
+          // Glow
+          const g = ctx.createRadialGradient(sx, sy, 0, sx, sy, s.size * 10);
+          g.addColorStop(0, `rgba(212,175,55,${0.18 * s.brightness})`);
+          g.addColorStop(1, 'rgba(212,175,55,0)');
+          ctx.beginPath(); ctx.arc(sx, sy, s.size * 10, 0, Math.PI * 2);
+          ctx.fillStyle = g; ctx.fill();
+
+          // Core
+          ctx.beginPath(); ctx.arc(sx, sy, s.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(212,175,55,${0.65 * s.brightness})`;
+          ctx.fill();
+        });
+      });
+
+      // Connection lines
+      const sats = getAllSatPositions();
+      for (let i = 0; i < sats.length; i++) {
+        for (let j = i + 1; j < sats.length; j++) {
+          const dx = sats[i].x - sats[j].x, dy = sats[i].y - sats[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const maxDist = dim * 0.14;
+          if (dist < maxDist) {
+            ctx.beginPath();
+            ctx.moveTo(sats[i].x, sats[i].y);
+            ctx.lineTo(sats[j].x, sats[j].y);
+            ctx.strokeStyle = `rgba(212,175,55,${0.04 * (1 - dist / maxDist)})`;
+            ctx.lineWidth = 0.4;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    ctx.fillStyle = 'rgb(5,5,5)';
+    ctx.fillRect(0, 0, W, H);
+    draw();
+  })();
+  </script>
+</body>
+</html>

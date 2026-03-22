@@ -1,0 +1,39 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-8%" y="-8%" width="120%" height="120%">
+      <feDropShadow dx="1.5" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Bottom-left bracket: gold outline (32), dark fill (24) — exact original -->
+  <g filter="url(#shadow)">
+    <path d="M 50 173 L 50 250 L 127 250"
+          fill="none" stroke="#D4AF37" stroke-width="32"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M 50 173 L 50 250 L 127 250"
+        fill="none" stroke="#2A2A2A" stroke-width="24"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Letter A: dark outline (36), gold fill (26.4) — exact original -->
+  <g filter="url(#shadow)">
+    <g fill="none" stroke="#2A2A2A" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/>
+      <path d="M 130 175 L 198 175"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#D4AF37" stroke-width="26.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 110 205 L 160 103 Q 164 95 168 103 L 218 205"/>
+    <path d="M 130 175 L 198 175"/>
+  </g>
+
+  <!-- Top-right bracket: gold outline (32), dark fill (24) — exact original -->
+  <g filter="url(#shadow)">
+    <path d="M 250 127 L 250 50 L 173 50"
+          fill="none" stroke="#D4AF37" stroke-width="32"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M 250 127 L 250 50 L 173 50"
+        fill="none" stroke="#2A2A2A" stroke-width="24"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
