@@ -73,45 +73,70 @@
       opacity: 0;
     }
 
-    /* Stroke draw-in animation */
+    /* All parts hidden initially */
+    .logo-svg .bracket-bl,
+    .logo-svg .bracket-tr,
+    .logo-svg .letter-a { opacity: 0; }
+
+    /* Stroke draw-in setup */
     .logo-svg path, .logo-svg g path {
       stroke-dasharray: 600;
       stroke-dashoffset: 600;
     }
 
+    /* ── Stage 1: Container fades in ── */
     .logo-svg.animate {
-      opacity: 1;
+      animation: logo-container-in 0.6s ease-out forwards;
     }
 
-    .logo-svg.animate path,
-    .logo-svg.animate g path {
-      animation: draw-stroke 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    @keyframes logo-container-in {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 0.75; transform: scale(1); }
     }
 
-    /* Stagger the draw-in for different parts */
-    .logo-svg.animate .bracket-bl path { animation-delay: 0s; }
-    .logo-svg.animate .letter-a path { animation-delay: 0.3s; }
-    .logo-svg.animate .bracket-tr path { animation-delay: 0.6s; }
+    /* ── Stage 2: Bottom-left bracket draws in ── */
+    .logo-svg.animate .bracket-bl {
+      animation: part-fade-in 0.4s 0.3s ease-out forwards;
+    }
+    .logo-svg.animate .bracket-bl path {
+      animation: draw-stroke 1.4s 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* ── Stage 3: Top-right bracket draws in ── */
+    .logo-svg.animate .bracket-tr {
+      animation: part-fade-in 0.4s 0.9s ease-out forwards;
+    }
+    .logo-svg.animate .bracket-tr path {
+      animation: draw-stroke 1.4s 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* ── Stage 4: Letter A draws in last ── */
+    .logo-svg.animate .letter-a {
+      animation: part-fade-in 0.5s 1.6s ease-out forwards;
+    }
+    .logo-svg.animate .letter-a path {
+      animation: draw-stroke 1.8s 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes part-fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
     @keyframes draw-stroke {
       to { stroke-dashoffset: 0; }
     }
 
-    /* Gold shimmer after draw-in */
+    /* ── Shimmer + breathe after all parts drawn ── */
     .logo-svg.animate {
-      animation: logo-appear 0.5s ease-out forwards,
-                 logo-shimmer 4s 2.5s ease-in-out infinite,
-                 logo-breathe 6s 3s ease-in-out infinite;
-    }
-
-    @keyframes logo-appear {
-      from { opacity: 0; transform: scale(0.92); }
-      to { opacity: 1; transform: scale(1); }
+      animation: logo-container-in 0.6s ease-out forwards,
+                 logo-shimmer 5s 3.8s ease-in-out infinite,
+                 logo-breathe 7s 4s ease-in-out infinite;
     }
 
     @keyframes logo-shimmer {
-      0%, 100% { filter: drop-shadow(0 0 40px rgba(212,175,55,0.05)) brightness(1); }
-      50% { filter: drop-shadow(0 0 80px rgba(212,175,55,0.12)) brightness(1.05); }
+      0%, 100% { filter: drop-shadow(0 0 40px rgba(212,175,55,0.04)) brightness(1); }
+      50% { filter: drop-shadow(0 0 70px rgba(212,175,55,0.10)) brightness(1.03); }
     }
 
     @keyframes logo-breathe {
