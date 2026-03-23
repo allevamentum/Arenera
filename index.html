@@ -163,6 +163,57 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 0.5; transform: translateY(0); }
     }
+
+    /* ─── Mobile responsive ─── */
+    @media (max-width: 768px) {
+      .header {
+        padding: 14px 16px;
+      }
+      .header-wordmark { height: 14px; }
+      .btn-brand {
+        padding: 10px 20px;
+        font-size: 11px; letter-spacing: 1.5px;
+        gap: 6px;
+      }
+      .btn-brand svg { width: 11px; height: 11px; }
+      .logo-svg {
+        width: clamp(280px, 85vw, 420px);
+        height: clamp(280px, 85vw, 420px);
+      }
+      .tagline {
+        bottom: 20px;
+        font-size: 10px; letter-spacing: 3px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 12px 14px;
+      }
+      .header-wordmark { height: 12px; }
+      .btn-brand {
+        padding: 8px 16px;
+        font-size: 10px; letter-spacing: 1px;
+        gap: 5px;
+      }
+      .logo-svg {
+        width: clamp(240px, 88vw, 340px);
+        height: clamp(240px, 88vw, 340px);
+      }
+      .tagline {
+        bottom: 16px;
+        font-size: 9px; letter-spacing: 2.5px;
+      }
+    }
+
+    /* Landscape phones */
+    @media (max-height: 500px) {
+      .logo-svg {
+        width: clamp(200px, 60vh, 360px);
+        height: clamp(200px, 60vh, 360px);
+      }
+      .tagline { bottom: 8px; font-size: 9px; }
+    }
   </style>
 </head>
 <body>
@@ -193,10 +244,10 @@
   <!-- Centered logo -->
   <div class="logo-center">
     <svg class="logo-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-      <!-- Bottom-left bracket -->
+      <!-- Bottom-left bracket (square: 90×90) -->
       <g class="bracket-bl">
-        <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#D4AF37" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 50 173 L 50 250 L 127 250" fill="none" stroke="#2A2A2A" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 50 160 L 50 250 L 140 250" fill="none" stroke="#D4AF37" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 50 160 L 50 250 L 140 250" fill="none" stroke="#2A2A2A" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
       <!-- Letter A (scaled 94.4%) -->
       <g class="letter-a" transform="translate(164, 152) scale(0.944) translate(-164, -152)">
@@ -209,10 +260,10 @@
           <path d="M 130 175 L 198 175"/>
         </g>
       </g>
-      <!-- Top-right bracket -->
+      <!-- Top-right bracket (square: 90×90) -->
       <g class="bracket-tr">
-        <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#D4AF37" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 250 127 L 250 50 L 173 50" fill="none" stroke="#2A2A2A" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 250 140 L 250 50 L 160 50" fill="none" stroke="#D4AF37" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 250 140 L 250 50 L 160 50" fill="none" stroke="#2A2A2A" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
     </svg>
   </div>
